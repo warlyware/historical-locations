@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/extrastyles.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form method="POST" action='/temperature'>
+      <input type="text" placeholder='Enter temperature' name="degrees">
+      <select name="tempType">
+        <option value="cel">Celsius</option>
+        <option value="far">Farenheit</option>
+      </select>
+      <button type="submit">submit</button>
+    </form>
+
+  </body>
+</html>
