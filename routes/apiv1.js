@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var Firebase = require('firebase');
+var fbRef =  new Firebase('https://historic-locations.firebaseio.com/locations');
 
 var fakeData = [
   {name: 'location', description: 'Location1', year: '1996'},
@@ -13,7 +15,8 @@ router.get('/locations', function(req, res) {
 });
 
 router.post('/locations', function(req, res) {
-  res.json(fakeData[0]);
+  fbRef.push(req.body);
+  res.json(req.body);
 });
 
 module.exports = router;
